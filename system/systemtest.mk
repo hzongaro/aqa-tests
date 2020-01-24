@@ -39,4 +39,6 @@ ifeq ($(CYGWIN),1)
    export PATH:=$(PERL):$(PATH)
 endif
 
+export TR_disableTernaryOpForEA=yes
+
 SYSTEMTEST_RESROOT=$(TEST_RESROOT)/../
