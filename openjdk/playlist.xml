@@ -329,8 +329,7 @@
 	<test>
 		<testCaseName>jdk_lang_ref_FinalizeOverride_j9</testCaseName>
 		<variations>
-			<!-- variation>-Xjit:enableAggressiveLiveness,{*FinalizeOverride.test*}(log=jitlog,traceCG),verbose,vlog=jitlog.vlog -XX:-JITServerTechPreviewMessage</variation -->
-			<variation>-Xjit:enableAggressiveLiveness,dontInline={*FinalizeOverride.test*},{*FinalizeOverride.test*}(count=0,log=jitlog,traceCG),verbose,vlog=jitlog.vlog -XX:-JITServerTechPreviewMessage</variation>
+			<variation>-Xjit:enableAggressiveLiveness,{*FinalizeOverride.test*}(count=5,log=jitlog,traceCG),disableAsyncCompilation,verbose,vlog=jitlog.vlog -XX:-JITServerTechPreviewMessage</variation>
 		</variations>   
 		<command>$(JAVA_COMMAND) -Xmx512m -jar $(Q)$(TEST_RESROOT)$(D)jtreg$(D)lib$(D)jtreg.jar$(Q) \
 	$(JTREG_BASIC_OPTIONS) $(JDK_NATIVE_OPTIONS) -vmoptions:$(Q)-Xmx512m $(JVM_OPTIONS)$(Q) \
