@@ -686,7 +686,7 @@
 		</variations>
 		<command>$(JAVA_COMMAND) $(EXTRA_OPTIONS) \
 	-Xjit:verbose,vlog=$(Q)$(REPORTDIR)$(D)work$(D)vlog.jtreg$(Q) \
-	-Xdump:jit+java:directory=$(Q)$(REPORTDIR)$(D)work$(Q),events=throw,filter=$(Q){java/lang/NullPointerException#java/lang/String.&lt;init&gt;(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V}$(Q) \
+	-Xdump:jit+java:directory=$(Q)$(REPORTDIR)$(D)work$(Q),events=throw,filter=$(Q)java/lang/NullPointerException#java/lang/String.&lt;init&gt;*$(Q) \
 	-Xmx512m -jar $(Q)$(TEST_RESROOT)$(D)jtreg$(D)lib$(D)jtreg.jar$(Q) \
 	$(JTREG_BASIC_OPTIONS) $(JDK_NATIVE_OPTIONS) -vmoptions:$(Q)-Xmx512m $(JVM_OPTIONS) $(VMOPTION_HEADLESS)$(Q) \
 	$(TIMEOUT_HANDLER) \
