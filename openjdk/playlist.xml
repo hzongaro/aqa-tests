@@ -686,7 +686,6 @@
 		</variations>
 		<command>mkdir -p $(Q)$(REPORTDIR)$(D)work$(Q); \
 	$(JAVA_COMMAND) $(EXTRA_OPTIONS) \
-	-Xjit:verbose,vlog=$(Q)$(REPORTDIR)$(D)work$(D)vlog.jtreg$(Q) \
 	-Xdump:jit:file=$(Q)$(REPORTDIR)$(D)work$(D)jitdump.%Y%m%d.%H%M%S.%pid.%seq.dmp$(Q),events=throw,filter=$(Q)java/lang/NullPointerException#java/lang/String.&lt;init&gt;*$(Q) \
         $(EXTRA_OPTIONS) \
 	-Xmx512m -jar $(Q)$(TEST_RESROOT)$(D)jtreg$(D)lib$(D)jtreg.jar$(Q) \
