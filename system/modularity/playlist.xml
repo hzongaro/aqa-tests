@@ -610,7 +610,7 @@
 			<variation>Mode650</variation>
 			<variation>Mode1000</variation>
 		</variations>
-		<command>$(SYSTEMTEST_CMD_TEMPLATE) -test=CpMpJlinkTest; \
+		<command>TR_OPTIONS=$(Q){*TransformImpl?MethodCodeTransform.lambda?resolve?0*}(log=lambda.resolve.0.log,traceFull)$(Q) $(SYSTEMTEST_CMD_TEMPLATE) -test=CpMpJlinkTest; \
 	$(TEST_STATUS)</command>
 		<versions>
 			<version>9+</version>
