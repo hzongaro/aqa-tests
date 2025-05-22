@@ -1604,8 +1604,9 @@
 		</variations>
 		<command>$(JAVA_COMMAND) -Xmx512m -jar $(Q)$(TEST_RESROOT)$(D)jtreg$(D)lib$(D)jtreg.jar$(Q) \
 	$(JTREG_BASIC_OPTIONS) $(JDK_NATIVE_OPTIONS) \
-	$(Q)-Xjit:verbose,vlog=$(REPORTDIR)$(D)work$(D)vlog -Xdump:system+jit:events=throw+systhrow,filter=java/lang/NullPointerException#java/util/Arrays.copyOfRange
- -Xdump:directory=$(REPORTDIR)$(D)work$(Q) \
+	-Xjit:verbose,vlog=$(REPORTDIR)$(D)work$(D)vlog \
+	-Xdump:system+jit:events=throw+systhrow,filter=java/lang/NullPointerException#java/util/Arrays.copyOfRange \
+ 	-Xdump:directory=$(REPORTDIR)$(D)work \
 	-vmoptions:$(Q)-Xmx1540m $(JVM_OPTIONS) $(VMOPTION_HEADLESS)$(Q) \
 	$(TIMEOUT_HANDLER) \
 	-w $(Q)$(REPORTDIR)$(D)work$(Q) \
