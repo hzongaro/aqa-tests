@@ -900,7 +900,7 @@
 	$(TIMEOUT_HANDLER) \
 	-w $(Q)$(REPORTDIR)$(D)work$(Q) \
 	-r $(Q)$(REPORTDIR)$(D)report$(Q) \
-	-Xdump:jit+system:events=throw+systhrow,filter=java/util/zip/ZipException \
+	-Xdump:jit+system:events=throw+systhrow,filter=java/lang/NullPointerException#java/util/zip/ZipCoder* \
 	-Xdump:directory=$(REPORTDIR)$(D)work \
 	-jdk:$(Q)$(TEST_JDK_HOME)$(Q) \
 	-exclude:$(Q)$(JTREG_JDK_TEST_DIR)$(D)ProblemList.txt$(Q) \
@@ -1607,7 +1607,7 @@
 		<command>$(JAVA_COMMAND) -Xmx512m -jar $(Q)$(TEST_RESROOT)$(D)jtreg$(D)lib$(D)jtreg.jar$(Q) \
 	$(JTREG_BASIC_OPTIONS) $(JDK_NATIVE_OPTIONS) \
 	-Xjit:verbose,vlog=$(REPORTDIR)$(D)work$(D)vlog \
-	-Xdump:jit+system:events=throw+systhrow,filter=java/util/zip/ZipException \
+	-Xdump:jit+system:events=throw+systhrow,filter=java/lang/NullPointerException#java/util/zip/ZipCoder* \
 	-Xdump:directory=$(REPORTDIR)$(D)work \
 	-vmoptions:$(Q)-Xmx1540m $(JVM_OPTIONS) $(VMOPTION_HEADLESS)$(Q) \
 	$(TIMEOUT_HANDLER) \
